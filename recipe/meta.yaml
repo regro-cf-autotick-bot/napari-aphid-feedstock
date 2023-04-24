@@ -1,5 +1,5 @@
 {% set name = "napari-aphid" %}
-{% set version = "1.1.2" %}
+{% set version = "1.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-aphid-{{ version }}.tar.gz
-  sha256: 527f10d1b7ff3ff5e7b7cdb4206c7924e2c6c38b5874a0d2a593c45c187aa87c
+  sha256: 4646fd6995af3eecc26cb0f7fa3c19e722bf2007ffedcbbdffba0159f704cd6a
 
 build:
   noarch: python
