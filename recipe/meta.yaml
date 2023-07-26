@@ -34,6 +34,7 @@ requirements:
     - scikit-learn
     - tifffile
     - tqdm
+    - scipy
 
 test:
   imports:
