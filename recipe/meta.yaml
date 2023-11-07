@@ -43,6 +43,7 @@ test:
     - pip check  # Wrong dependencies are listed in the original package
   requires:
     - pip
+    - pyqt
 
 about:
   home: https://pypi.org/project/napari-aphid
