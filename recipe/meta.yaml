@@ -21,7 +21,6 @@ requirements:
     - setuptools-scm
   run:
     - h5py
-    - imagecodecs
     - magicgui
     - matplotlib-base
     - napari
@@ -32,8 +31,8 @@ requirements:
     - qtpy
     - scikit-image
     - scikit-learn
-    - tifffile
-    - tqdm
+    - tifffile  # Imported but not listed as requirement
+    - tqdm  # Imported but not listed as requirement
     - scipy
 
 test:
@@ -41,7 +40,7 @@ test:
     - napari_aphid
   commands:
     - pip list
-    # - pip check  # Wrong dependencies are listed in the original package
+    - pip check  # Wrong dependencies are listed in the original package
   requires:
     - pip
 
