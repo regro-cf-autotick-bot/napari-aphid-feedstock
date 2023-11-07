@@ -1,5 +1,5 @@
 {% set name = "napari-aphid" %}
-{% set version = "1.1.6" %}
+{% set version = "1.1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-aphid-{{ version }}.tar.gz
-  sha256: 4646fd6995af3eecc26cb0f7fa3c19e722bf2007ffedcbbdffba0159f704cd6a
+  sha256: ec0c35e7ed09005cdccddea9f8dd9e0a40f79f712aa86f6ecb0e5f34e8465fa0
 
 build:
   noarch: python
@@ -21,7 +21,6 @@ requirements:
     - setuptools-scm
   run:
     - h5py
-    - imagecodecs
     - magicgui
     - matplotlib-base
     - napari
@@ -32,25 +31,29 @@ requirements:
     - qtpy
     - scikit-image
     - scikit-learn
-    - tifffile
-    - tqdm
+    - tifffile  # Imported but not listed as requirement
+    - tqdm  # Imported but not listed as requirement
+    - scipy
 
 test:
   imports:
     - napari_aphid
   commands:
     - pip list
-    # - pip check  # Wrong dependencies are listed in the original package
+    # - pip check  # Fails due to opencv-python-headless
   requires:
     - pip
+    - pyqt
 
 about:
-  home: https://github.com/hereariim/napari-aphid
+  home: https://pypi.org/project/napari-aphid
   summary: A plugin to classify aphids by stage of development.
   license: BSD-3-Clause
   license_file: LICENSE
+  dev_url: https://github.com/hereariim/napari-aphid
 
 extra:
   recipe-maintainers:
     - goanpeca
+    - hereariim
     - jaimergp
